@@ -1,0 +1,274 @@
+@import './mixins.scss';
+@import './colors.scss';
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.header {
+    @include flexContainer;
+    justify-content: space-between;
+    padding-top: 30px;
+
+    @media screen and (max-width:700px) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+.header-logo {
+
+    img {
+        width: 150px;
+    }
+}
+
+.menu_list {
+    @include flexContainer;
+    gap: 75px;
+
+    @media screen and (max-width: 1200px) {
+        gap: 45px;
+
+    }
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.mobile_menu {
+    display: none;
+
+    @media screen and (max-width: 700px) {
+        display: block;
+        position: relative;
+        order: 2;
+
+        &_button {
+            text-transform: uppercase;
+            font-weight: 500;
+
+            &:hover {
+                &+.mobile_menu_nav {
+                    display: block;
+                }
+            }
+        }
+
+        &_nav {
+            display: none;
+            position: absolute;
+            background: $orange;
+            right: 0;
+            padding: 24px;
+            z-index: 2;
+
+            li {
+                color: $headers;
+
+                &:not(:last-child) {
+                    margin-bottom: 16px;
+                }
+            }
+
+        }
+    }
+}
+
+.header-contacts {
+    color: $headers;
+    font-weight: bold;
+
+    @media screen and (max-width: 700px) {
+        order: 1;
+    }
+}
+
+.about {
+    background-image: url(../img/cow.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    background-position-x: 95%;
+
+    @media screen and (max-width: 1200px) {
+        @include flexContainer;
+        background-size: 35%;
+    }
+
+    &-header {
+        font-size: 60px;
+        line-height: 72px;
+        font-weight: bold;
+        color: $headers;
+        padding-top: 100px;
+
+        &__item {
+            @include header;
+        }
+
+        @media screen and (max-width: 700px) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+
+
+    &-content {
+        margin-top: 40px;
+
+        span {
+            color: $orange;
+        }
+    }
+
+    &-input {
+        margin-top: 45px;
+
+        @media screen and (max-width:700px) {
+            @include flexContainer;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 3px;
+        }
+
+        &__field {
+            height: 55px;
+            width: 195px;
+            border: #e1e1e1;
+            background-color: #f8f8f8;
+
+            &::placeholder {
+                font-size: 18px;
+                line-height: 31px;
+                color: $headers;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+
+        &__button {
+            height: 55px;
+            width: 195px;
+            background-color: $orange;
+            font-size: 18px;
+            line-height: 31px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+    }
+}
+
+.description {
+    padding-top: 180px;
+
+    &-img {
+        @media screen and (max-width: 700px) {
+            max-width: 30%;
+            padding-bottom: 20px;
+        }
+    }
+
+
+    &-wrapper {
+        text-align: center;
+        font-size: 24px;
+        line-height: 36px;
+
+        @media screen and (max-width: 700px) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        span {
+            color: $orange;
+        }
+    }
+
+    &-header {
+        font-size: 60px;
+        line-height: 72px;
+        font-weight: bold;
+        color: $headers;
+
+        @include header;
+
+        @media screen and (max-width:700px) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+
+
+    &-facts {
+        @include flexContainer;
+        padding-top: 45px;
+
+        @media screen and (max-width: 700px) {
+            flex-direction: column;
+        }
+
+        &-list {
+            max-width: 395px;
+            text-align: center;
+
+            &__item {
+
+                span {
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
+                    line-height: 17px;
+                    width: 20px;
+                    height: 20px;
+                    color: $orange;
+                    border: 1px solid $orange;
+                    border-radius: 100%;
+                    position: relative;
+                }
+
+                &:not(:first-child) {
+                    span::before {
+                        content: "";
+                        position: absolute;
+                        top: -10px;
+                        left: 50%;
+                        transform: translateY(-50%);
+                        display: block;
+                        width: 1px;
+                        height: 20px;
+                        background: $orange;
+
+                    }
+                }
+
+                span::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -30px;
+                    left: 50%;
+                    transform: translateY(-50%);
+                    display: block;
+                    width: 1px;
+                    height: 20px;
+                    background: $orange;
+
+                }
+
+                p {
+                    padding-bottom: 40px;
+                    padding-top: 40px;
+                }
+            }
+        }
+    }
+}

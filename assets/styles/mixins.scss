@@ -1,0 +1,22 @@
+@mixin flexContainer() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin header() {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        width: 100%;
+        height: 20%;
+        background-color: $orange;
+        z-index: -1;
+    }
+}

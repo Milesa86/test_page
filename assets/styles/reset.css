@@ -1,0 +1,51 @@
+body {
+	 margin: 0;
+	 overflow-x: hidden;
+	 font-family: Calibri, sans-serif;
+	 font-size: 18px;
+	 font-weight: 400;
+	 background-image: url(../img/___123.png);
+	 background-size: cover;
+
+}
+ h1, h2, h3, h4, h5, h6 {
+	 font-size: 16px;
+	 font-weight: 400;
+	 margin: 0;
+}
+ img {
+	 max-width: 100%;
+	 height: auto;
+}
+ button {
+	 background: none;
+	 outline: none;
+	 border: none;
+}
+ a {
+	 text-decoration: none;
+	 color: #616161;
+}
+ * {
+	 box-sizing: border-box;
+}
+ ul, li {
+	 padding: 0;
+	 margin: 0;
+	 list-style-type: none;
+}
+ p {
+	 margin: 0;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+  }
+ 
